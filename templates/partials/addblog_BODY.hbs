@@ -1,0 +1,91 @@
+<div class="page-wrapper  p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Add Blog</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/submitblog" id="myform" enctype="application/x-www-form-urlencoded">
+
+                    <div class="form-row">
+                        <div class="name">Title</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input id="title" class="input--style-5" type="text" name="title">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Message-->
+
+                    <div class="form-row m-b-55">
+                        <div class="name">Short Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea name="shortdesc" id="shortdesc" cols="49" rows="4" class="input--style-5"
+                                    style="border:none; "></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row m-b-55">
+                        <div class="name">Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea name="desc" id="desc" cols="49" rows="4" class="input--style-5"
+                                    style="border:none; "></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-row">
+                        <div class="name">Country</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input id="country" class="input--style-5" type="text" name="country">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="name">State</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input id="state" class="input--style-5" type="text" name="state">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">City</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input id="city" class="input--style-5" type="text" name="city">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Image</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input id="image" class="input--style-5" type="text" name="image">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button class="btn btn--radius-2 btn--green" type="submit" id="btnsubmit">Post</button>
+                        <button class="btn btn--radius-2 btn--red" type="submit" id="btndiscard">Discard</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

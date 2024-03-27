@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {{>registerCSS}}
+</head>
+<body>
+     <form method="post" action="/register">
+        <h3>Register Here</h3>
+
+         <label for="fname">First Name</label>
+        <input type="text" placeholder="Enter Your first name" id="fname" name="fname">
+ <label for="lname">Last Name</label>
+        <input type="text" placeholder="Enter Your last name" id="lname" name="lname">
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email" name="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password">
+
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" placeholder="cPassword" id="cpassword" name="cpassword">
+
+        <button type="submit">Register</button>
+         <a  href="/" class="btn btn-danger" style="color: rgb(0, 216, 36);"> Go Back</a>
+       
+    </form>
+</body>
+</html>

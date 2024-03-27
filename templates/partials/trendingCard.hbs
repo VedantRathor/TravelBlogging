@@ -1,0 +1,13 @@
+<div id={{trendingBlog._id}} class="card trendingcard " style="width: 20rem; height : 25rem; box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;">
+    <img style="margin-top : ;" src={{trendingBlog.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card" style="padding:10px; background: linear-gradient(45deg, #e0a5b9 0%, #d0b57c 100%); font-size: 20px; ">{{trendingBlog.placename}}</h5>
+         <h6 style="font-weight: 400">By - {{trendingBlog.fname}} {{trendingBlog.lname}}</h6>
+         <span>
+           <span>Likes: {{trendingBlog.likes}}</span>
+          
+         </span>
+         
+        <a style="color:rgb(148, 73, 73)" class="nav-link active" href="/Blogs?cardID={{trendingBlog._id}}" >Read More...</a>
+    </div>
+</div>

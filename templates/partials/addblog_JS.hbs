@@ -1,0 +1,70 @@
+<script>
+    const btnsubmit = document.getElementById('btnsubmit')
+    const btndiscard = document.getElementById('btndiscard')
+    const myform = document.getElementById('myform')
+
+    const city = document.getElementById('city')
+    const state = document.getElementById('state')
+    const desc = document.getElementById('desc')
+    const shortdesc = document.getElementById('shortdesc')
+    const country = document.getElementById('country')
+    const image = document.getElementById('image')
+    const title = document.getElementById('title')
+
+    btnsubmit.addEventListener('click', function (event) {
+        myform.action = '/submitblog'
+    })
+
+    btndiscard.addEventListener('click', function (event) {
+        myform.action = '/discardblog'
+    })
+
+    const loginID = document.getElementById('loginID')
+    const logoutID = document.getElementById('logoutID')
+    const stateheading = document.getElementById('stateheading')
+    const ID_name = document.getElementById('ID_name')
+    const imgDIV = document.getElementById('imgDIV')
+    imgDIV.addEventListener('click',function(event){
+      window.location.href = `/user/{{userdata.result._id}}/allblogs`
+   })
+
+    ID_name.style.fontSize = "25px"
+    ID_name.style.fontWeight = "500"
+
+    const loggedIn = {{ userdata.isloggedIn }}
+    if (loggedIn == true) {
+        logoutID.style.display = "content"
+        loginID.style.display = "none"
+        ID_name.textContent = `Welcome {{userdata.result.fname}} 😍`
+        imgDIV.style.display = "content"
+           
+           const temp = {{isDataPending}}
+           console.log(temp)
+           if( {{isDataPending}} == true ){
+            console.log('hey in isDatapending')
+                city.value = `{{city}}`
+                state.value = `{{state}}`
+                image.value = `{{image}}`
+                desc.value = `{{desc}}`
+                shortdesc.value = `{{shortdesc}}`
+                title.value = `{{placename}}`
+           }
+
+    } else {
+        loginID.style.display = "content"
+        logoutID.style.display = "none"
+        imgDIV.style.display = "none"
+    }
+
+      const searchquery = document.getElementById("searchquery")
+      const searchbtn = document.getElementById('searchbtn')
+
+      searchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = searchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+
+
+</script>

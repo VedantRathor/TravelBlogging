@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    {{>homePageCss}}
+</head>
+<body>
+    {{>fixedNavBar}}
+    
+    {{#each data}}
+    {{>practicePartials}}
+    {{/each}}
+   
+   <script>
+       document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener to each card
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function () {
+                // Extract the ID from the card's ID attribute
+                const cardId = card.id
+                console.log('Clicked card ID:', cardId);
+            });
+        });
+    });
+    </script>
+</body>
+</html>

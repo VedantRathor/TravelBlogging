@@ -1,0 +1,8 @@
+<h1 id="stateheading" >Blogs : {{size}}</h1>
+    <div id="dataContainer"  class="container-fluid" style="padding-right: 0; min-width: 100vw; min-height: 72vh; ">
+        <div id="dataContainerRow" class="secondContainer row" style="margin: 0 0;  ">
+            {{#each allblogdata}}
+            {{>mainCards}}
+            {{/each}}
+        </div>
+    </div>

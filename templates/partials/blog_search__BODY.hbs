@@ -1,0 +1,30 @@
+<div id="stateheading" style="font-size: 30px">
+    <div>
+           <span style="color: rgb(37, 17, 17)">
+        Showing result for -
+    </span>
+    <span>
+        {{queryname}}
+    </span>
+    </div>
+  
+   <div>
+          <span style="color: rgb(37, 17, 17)">
+        Blogs -
+    </span>
+    <span>
+        {{size}}
+    </span>
+    </div>
+   </div>
+
+</div>
+
+
+<div id="dataContainer" class="container-fluid" style="padding-right: 0; min-width: 100vw; min-height: 68vh">
+        <div id="dataContainerRow" class="secondContainer row" style="margin: 0 0;  ">
+            {{#each allblogdata}}
+            {{>mainCards}}
+            {{/each}}
+        </div>
+    </div>

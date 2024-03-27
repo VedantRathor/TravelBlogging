@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+        
+        </script>
+<script>
+  
+    
+
+    const loginID = document.getElementById('loginID')
+    const logoutID = document.getElementById('logoutID')
+    const ID_name = document.getElementById('ID_name')
+    const imgDIV = document.getElementById('imgDIV')
+  
+
+
+    ID_name.style.fontSize = "25px"
+    ID_name.style.fontWeight = "500"
+
+    const loggedIn = {{ userdata.isloggedIn }}
+    if (loggedIn == true) {
+        logoutID.style.display = "content"
+        loginID.style.display = "none"
+        ID_name.textContent = `Welcome {{userdata.result.fname}} 😍`
+        imgDIV.style.display = "content"
+         
+    } else {
+        loginID.style.display = "content"
+        logoutID.style.display = "none"
+        imgDIV.style.display = "none"
+    }
+
+  
+   imgDIV.addEventListener('click',function(event){
+      window.location.href = `/user/{{userdata.result._id}}/allblogs`
+   })
+
+
+const searchquery = document.getElementById("searchquery")
+      const searchbtn = document.getElementById('searchbtn')
+
+      searchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = searchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+
+</script>

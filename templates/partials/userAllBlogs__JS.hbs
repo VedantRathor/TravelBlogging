@@ -1,0 +1,49 @@
+<script>
+    const loginID = document.getElementById('loginID')
+    const logoutID = document.getElementById('logoutID')
+    const stateheading = document.getElementById('stateheading')
+    const ID_name = document.getElementById('ID_name')
+     const imgDIV = document.getElementById('imgDIV')
+       imgDIV.addEventListener('click',function(event){
+      window.location.href = `/user/{{userdata.result._id}}/allblogs`
+   })
+   
+    ID_name.style.fontSize = "25px"
+    ID_name.style.fontWeight = "500"
+
+    const loggedIn = {{ userdata.isloggedIn }}
+    if (loggedIn == true) {
+        logoutID.style.display = "content"
+        loginID.style.display = "none"
+        ID_name.textContent = `Welcome {{userdata.result.fname}} 😍`
+         imgDIV.style.display = "content"
+    } else {
+        loginID.style.display = "content"
+        logoutID.style.display = "none"
+             imgDIV.style.display = "none"
+    }
+
+    document.querySelectorAll('.maincard').forEach( card=>{
+        const img = card.querySelector('img')
+
+        img.addEventListener('click',function(event){
+            window.location.href = `/Blogs?cardID=${card.id}`
+        })
+    })
+
+    const msg = `{{msg}}` 
+    if( msg != ""){
+      alert(msg)
+    }
+
+  const searchquery = document.getElementById("searchquery")
+      const searchbtn = document.getElementById('searchbtn')
+
+      searchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = searchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+
+</script>

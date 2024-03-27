@@ -1,0 +1,114 @@
+<script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+     
+
+       const loginID = document.getElementById('loginID')
+       const logoutID = document.getElementById('logoutID')
+       const imgDIV = document.getElementById('imgDIV')
+        const ID_name = document.getElementById('ID_name')
+        imgDIV.addEventListener('click',function(event){
+      window.location.href = `/user/{{userdata.result._id}}/allblogs`
+   })
+       ID_name.style.fontSize = "25px"
+       ID_name.style.fontWeight = "500"
+       
+        function statecardClicked(statecard){
+          return function(event){
+             console.log(statecard.id)
+          }
+          
+       }
+
+       function citycardClicked(citycard){
+        return function(event){
+          let id = citycard.id
+          id = id.toLowerCase()
+          console.log(id)
+        }
+       }
+
+       document.querySelectorAll(".statecard").forEach( statecard =>{
+          statecard.addEventListener('click', statecardClicked(statecard))
+          
+       })
+
+       document.querySelectorAll(".citycard").forEach( citycard => {
+         citycard.addEventListener('click' , citycardClicked(citycard))
+       })
+
+     const t = {{userdata.isloggedIn}}
+     if( t == true ){
+            logoutID.style.display = "content"
+            loginID.style.display = "none" 
+            ID_name.textContent = `Welcome {{userdata.result.fname}} 😍`
+            imgDIV.style.display = "content"
+     }else{
+           loginID.style.display = "content"
+          logoutID.style.display = "none"
+          imgDIV.style.display = "none"
+     }
+
+     const anyMsg = `{{msg}}` 
+     if( anyMsg != ""){
+      alert('your post has been drafted for you.')
+     }
+
+     document.querySelectorAll('.trendingcard').forEach( card=>{
+       
+
+        card.addEventListener('click',function(event){
+            window.location.href = `/Blogs?cardID=${card.id}`
+        })
+    })
+
+    document.querySelectorAll('.citycard').forEach( citycard =>{
+      const img = citycard.querySelector('img')
+      img.addEventListener('click', function(event){
+        window.location.href = `blogs/query?by=${citycard.id}`
+      })
+    })
+
+    document.querySelectorAll('.statecard').forEach( statecard =>{
+      statecard.addEventListener('click' , function(event){
+        window.location.href = `/blogs/query?by=${statecard.id}`
+      })
+    })
+
+      const searchquery = document.getElementById("searchquery")
+      const searchbtn = document.getElementById('searchbtn')
+
+      searchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = searchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+
+      const statesearchquery = document.getElementById("statesearchquery")
+      const statesearchbtn = document.getElementById('statesearchbtn')
+
+    
+
+    statesearchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = statesearchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+
+     const citysearchquery = document.getElementById("citysearchquery")
+      const citysearchbtn = document.getElementById('citysearchbtn')
+citysearchbtn.addEventListener('click', function(event){
+      console.log('hey')
+      const queryname = citysearchquery.value 
+      window.location.href = `/blogs/query?by=${queryname}` 
+
+    })
+       
+    </script>

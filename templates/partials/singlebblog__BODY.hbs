@@ -1,0 +1,128 @@
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" style="background: linear-gradient(45deg, #d53369 0%, #daae51 100%); !important ; width : 570px;border-radius:20px " >
+            <div class="sidebar-header">
+                <h3 id="headingLeft" style="color: rgb(0, 0, 0); text-decoration: underline ; text-align: center" >Author Details </h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="active">
+                    <div class="imagecontainer" style="display:flex; justify-content:center">
+                        <img src="https://th.bing.com/th/id/R.8e2c571ff125b3531705198a15d3103c?rik=gzhbzBpXBa%2bxMA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fuser-png-icon-big-image-png-2240.png&ehk=VeWsrun%2fvDy5QDv2Z6Xm8XnIMXyeaz2fhR3AgxlvxAc%3d&risl=&pid=ImgRaw&r=0"
+                            class="image-fluid" style="width: 40%; height : 7%; " />
+                    </div>
+
+                </li>
+
+                <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Written by - 
+                        </span>
+                        {{blogdata.fname}} {{blogdata.lname}}
+                    </h5>
+                </li>
+
+                <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Email Handle - 
+                        </span> 
+                       
+                       {{blogdata.email}} 
+                    </h5>
+                </li>
+
+                 <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Instagram Handle - 
+                        </span> 
+                        XYZ
+                    </h5>
+                </li>
+
+                <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Twitter Handle - 
+                        </span> 
+                        XYZ
+                    </h5>
+                </li>
+
+
+                <li>
+                    <h5 style="text-align:center; margin-top : 7px;"><a style="color: rgb(72, 97, 161);" class="nav-link active" href="/user/{{blogdata.uid}}/allblogs" target="d" id="name">Explore more {{blogdata.fname}}'s blogs</a></h5>
+                </li>
+
+
+
+            </ul>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <h3 style="text-align:center; color: rgb(10, 4, 4); text-decoration: underline">About this blog</h3>
+                </li>
+                 <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Place - 
+                        </span> 
+                        {{blogdata.placename}}
+                    </h5>
+                </li>
+
+                 <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                         State - 
+                        </span> 
+                      {{blogdata.state}}
+                    </h5>
+                </li>
+
+                 <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                       City - 
+                        </span> 
+                        {{blogdata.city}}
+                    </h5>
+                </li>
+
+                 <li>
+                    <h5 style="text-align:start; margin-top : 7px; margin-left: 10px">
+                        <span style="color: black">
+                          Likes - 
+                        </span> 
+                        {{blogdata.likes}}
+                    </h5>
+                </li>
+
+
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" style="border-radius: 30px; margin-left: 10px; background-color: rgba(211, 204, 204, 0.76);">
+
+            <div style="width: 90%;  ">
+                    <div class="contentImage" style="width: 100%; height:auto;">
+                <img id="img" style="width: 62%; text-align: center" src={{blogdata.image}} />
+            </div>
+
+            <div class="description mt-3">
+                <p id="mypara" style="color: rgb(20, 20, 20);">
+                   {{blogdata.desc}}
+                </p>
+            </div>
+            </div>
+           
+
+
+        </div>
+    </div>

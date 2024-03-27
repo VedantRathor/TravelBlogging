@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    {{>homePageCss}}
+</head>
+
+<body>
+    {{>fixedNavBar}}
+    {{>carousel}}
+
+    {{!-- {{#each userdata.result.tokens}}
+    <div>{{this._id}}</div>
+    {{/each}} --}}
+    <span>
+        <h1 id="stateheading">Know More about states..!!</h1>
+        {{>searchbar}}
+    </span>
+
+    {{#each statedata}}
+    {{>stateCards}}
+    {{/each}}
+
+    <h1 id="stateheading">Explore cities..!!</h1>
+    {{>citysearch}}
+    <div id="dataContainer" class="container-fluid" style="padding-right: 0; ">
+        <div id="dataContainerRow" class="secondContainer row" style="margin: 0 0;  ">
+            {{#each citydata}}
+            {{>cityCards}}
+            {{/each}}
+        </div>
+    </div>
+
+
+    {{>peopleExp}}
+
+    {{>footer}}
+
+    {{>HomePageScript}}
+</body>
+
+</html>
